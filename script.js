@@ -1,6 +1,6 @@
 let currentPhotoSrc = null;
 let deleteMode = false;
-const BACKEND_URL = "https://your-backend.vercel.app"; // غيره بالرابط بتاعك
+const BACKEND_URL = "https://lov-seven.vercel.app/"; // غيره بالرابط بتاعك
 
 // ====== Photos ======
 async function loadPhotos() {

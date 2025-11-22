@@ -1,4 +1,4 @@
-const BACKEND_URL = "https://love90-flask.vercel.app"; // غيّره لما ترفع
+const BACKEND_URL = "https://lov-seven.vercel.app/"; // غيّره لما ترفع
 
 async function loadMusic() {
   const musicList = document.getElementById("musicList");
