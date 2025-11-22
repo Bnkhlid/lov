@@ -1,4 +1,4 @@
-const BACKEND_URL = "https://lov-git-main-bnkhlids-projects.vercel.app"; // غيّره لما ترفع
+const BACKEND_URL = "https://lov-gvt8tp5tu-bnkhlids-projects.vercel.app"; // غيّره لما ترفع
 
 async function loadMusic() {
   const musicList = document.getElementById("musicList");
