@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>♥ ميمو & دودو ♥</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- السماح بتحميل الخطوط من Google -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+                   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                   font-src 'self' https://fonts.gstatic.com;"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>♥ Memo & Dodo Love Story ♥</h1>
+      <p class="subtitle">A bond stronger than anything in the world ♥</p>
+
+      <!-- صور -->
+      <div class="gallery" id="gallery"></div>
+
+      <!-- Popup عرض الصورة -->
+      <div
+        id="popup"
+        class="popup"
+        style="display: none"
+        onclick="closePopup()"
+      >
+        <img id="popupImg" src="" alt="عرض الصورة" />
+      </div>
+
+      <!-- رفع صورة -->
+      <form id="addPhotoForm">
+        <label for="photoInput">Add a new memory:</label>
+        <input type="file" id="photoInput" accept="image/*" />
+        <button type="submit">Upload</button>
+      </form>
+      <button id="toggleDeleteMode" class="main-delete-btn">Delete</button>
+
+      <!-- أغاني -->
+      <div class="music-section">
+        <h2>Echoed Memories</h2>
+        <audio
+          id="audioPlayer"
+          controls
+          style="width: 100%; margin-bottom: 10px"
+        >
+          Your browser does not support audio playback.
+        </audio>
+        <ul id="musicList"></ul>
+        <form id="addMusicForm" style="margin-top: 10px">
+          <input
+            type="url"
+            id="musicUrlInput"
+            placeholder="Direct MP3 link"
+            required
+            style="width: 65%"
+          />
+          <button type="submit">Add Song</button>
+        </form>
+      </div>
+
+      <!-- ملاحظات -->
+      <div class="quotes">
+        <h2>Sweet Love Notes</h2>
+        <form id="noteForm" class="note-form">
+          <input
+            type="text"
+            id="noteInput"
+            placeholder="Write a love note here"
+            required
+          />
+          <button type="submit">add 💌</button>
+        </form>
+        <div id="notesList" class="notes-list"></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="music.js"></script>
+    <script src="hearts.js"></script>
+    <script src="ht.js"></script>
+  </body>
+
+  <footer class="romantic-footer">Made with love | Memo</footer>
+</html>

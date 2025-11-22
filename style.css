@@ -1,0 +1,419 @@
+body {
+    font-family: 'Cairo', Arial, sans-serif;
+    background: #f8e9e6;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    color: #333;
+}
+.container {
+    max-width: 700px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    padding: 24px;
+}
+h1 {
+    color: #e06666;
+    text-align: center;
+    margin-bottom: 0;
+}
+.subtitle {
+    text-align: center;
+    color: #a64d79;
+    margin-bottom: 24px;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+.gallery img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid #ffd6d6;
+    box-shadow: 0 2px 8px rgba(230,102,102,0.08);
+    transition: transform 0.2s;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+}
+form {
+    text-align: center;
+    margin-bottom: 32px;
+}
+form label {
+    margin-left: 8px;
+    color: #a64d79;
+}
+form input[type="file"] {
+    margin-bottom: 8px;
+}
+form button {
+    background: #e06666;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 5px;
+}
+.quotes {
+    background: #ffe9e6;
+    padding: 15px 18px;
+    border-radius: 11px;
+    margin-top: 16px;
+}
+.quotes h2 {
+    color: #d36e70;
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+.quotes ul {
+    padding-right: 20px;
+}
+.quotes li {
+    margin-bottom: 7px;
+    font-size: 1rem;
+}
+.popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(30,20,30,0.82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: zoom-out;
+}
+.popup img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 19px;
+    box-shadow: 0 2px 20px #e06666;
+    border: 4px solid #fff;
+}
+.flying-heart {
+    position: fixed;
+    bottom: -40px;
+    z-index: 9999;
+    pointer-events: none;
+    transition: 
+        transform 10.2s cubic-bezier(.11,.49,.38,1.4),
+        opacity 2.7s;
+    will-change: transform, opacity;
+    filter: drop-shadow(0 2px 8px #fff3);
+    user-select: none;
+}
+.delete-btn {
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e06666;
+    color: #fff;
+    padding: 8px 26px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #e06666;
+    z-index: 99999;
+    transition: background 0.2s;
+}
+.delete-btn:hover {
+    background: #b71c1c;
+}
+.popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(30,20,30,0.82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: zoom-out;
+    flex-direction: column;
+}
+.popup img {
+    max-width: 90vw;
+    max-height: 75vh;
+    border-radius: 19px;
+    box-shadow: 0 2px 20px #e06666;
+    border: 4px solid #fff;
+    margin-bottom: 12px;
+}
+.note-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.note-form input[type="text"] {
+  flex: 1;
+  padding: 8px 13px;
+  border: 1px solid #e06666;
+  border-radius: 9px;
+  font-size: 1rem;
+  outline: none;
+  background: #fff9fa;
+}
+
+.note-form button {
+  background: linear-gradient(90deg, #e06666 50%, #f483c1 100%);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: bold;
+}
+.note-form button:hover {
+  background: linear-gradient(90deg, #f483c1 20%, #e06666 100%);
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.note-card {
+  background: linear-gradient(120deg, #fff6f9 60%, #ffe6e9 100%);
+  border: 1.5px solid #f483c1;
+  border-radius: 14px;
+  padding: 14px 18px 14px 38px;
+  font-size: 1.09rem;
+  color: #a64d79;
+  position: relative;
+  box-shadow: 0 1px 8px #ffd6d6;
+  transition: box-shadow 0.2s;
+  min-height: 36px;
+  word-break: break-word;
+  line-height: 1.85;
+}
+
+.note-card::before {
+  position: absolute;
+  right: 13px;
+  top: 10px;
+  font-size: 1.22em;
+}
+
+.delete-note {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  background: #e06666;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 1px 4px #e0666633;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.delete-note:hover {
+  background: #b71c1c;
+}
+.main-delete-btn {
+    background: #e06666;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 8px 22px;
+    font-size: 1.1em;
+    margin: 15px 0 7px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.main-delete-btn:hover {
+    background: #b71c1c;
+}
+
+.photo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e06666;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.15em;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 1px 4px #e0666633;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.delete-btn:hover {
+    background: #b71c1c;
+}
+.music-section {
+  background: #faf3f7;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 25px auto 0 auto;
+  max-width: 500px;
+}
+
+.music-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.music-section li {
+  background: #fff;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  direction: ltr;
+}
+.music-section li:hover {
+  background: #ffdfdf;
+}
+.music-section button {
+  background: #e06666;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.music-section button:hover {
+  background: #b71c1c;
+}
+h1, h2, h3, .heart, .subtitle {
+  font-family: 'Pacifico', cursive, Arial, sans-serif;
+  letter-spacing: 1.2px;
+  color: #e06666;
+}
+body, .note-card, .main-delete-btn, .girl, .boy, .note-form input, .note-form button {
+  font-family: 'Reem Kufi Fun', Arial, sans-serif;
+}
+body, .note-card, .main-delete-btn, .girl, .boy, .note-form input, .note-form button {
+  font-family: 'Tajawal', Arial, sans-serif;
+}
+body { font-family: 'Reem Kufi Fun', Arial, sans-serif; }
+h1, h2, h3, .heart, .subtitle {
+  font-family: 'Pacifico', 'Reem Kufi Fun', cursive, Arial, sans-serif;
+  color: #e06666;
+}
+button, 
+input[type="submit"], 
+input[type="button"] {
+  font-family: 'Reem Kufi Fun', 'Pacifico', cursive, Arial, sans-serif;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  background: #e06666;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 8px 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #e0666625;
+  transition: background 0.2s, transform 0.2s;
+}
+button:hover, 
+input[type="submit"]:hover, 
+input[type="button"]:hover {
+  background: #b71c1c;
+  transform: scale(1.05);
+}
+#toggleDeleteMode {
+  font-family: 'Pacifico', cursive, Arial, sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+}
+label {
+  font-family: 'Reem Kufi Fun', 'Pacifico', cursive, Arial, sans-serif;
+  font-size: 1.13em;
+  letter-spacing: 0.5px;
+  color: #e06666;
+  margin-bottom: 0.3em;
+  display: inline-block;
+  
+}
+input::placeholder, textarea::placeholder {
+  font-family: 'Reem Kufi Fun', 'Pacifico', cursive, Arial, sans-serif;
+  font-size: 1em;
+  color: #e06666;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+button[type="submit"] {
+  font-family: 'Reem Kufi Fun', 'Pacifico', cursive, Arial, sans-serif;
+  font-size: 1.1em;
+  letter-spacing: 1.2px;
+  background: #e06666;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 8px 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #e0666625;
+  transition: background 0.2s, transform 0.2s;
+}
+button[type="submit"]:hover {
+  background: #b71c1c;
+  transform: scale(1.05);
+}
+.note-card {
+  font-family: 'Reem Kufi Fun', 'Pacifico', cursive, Arial, sans-serif ;
+  font-size: 1.1em;
+  color: #e06666;
+  background: #fff5f8;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px #e0666620;
+  text-align: right; /* أو left أو center حسب رغبتك */
+}
+#toggleDeleteMode {
+  display: block;
+  margin: 0 auto;
+}
+.romantic-footer {
+  width: 100%;
+  text-align: center;
+  padding: 18px 0 12px 0;
+  font-family: 'Reem Kufi Fun', 'Pacifico', cursive, Arial, sans-serif;
+  color: #e06666;
+  background: transparent;
+  font-size: 1.05em;
+  letter-spacing: 1px;
+  opacity: 0.85;
+  position: relative; /* أو fixed إذا أردته ثابت بأسفل الشاشة */
+  bottom: 0;
+}
